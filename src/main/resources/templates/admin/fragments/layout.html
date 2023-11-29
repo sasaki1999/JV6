@@ -1,25 +1,79 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="fragments(content)">
+<html lang="en" th:fragment="fragments(content)" >
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../admin/images/favicon.png">
-    <link rel="stylesheet" href="../../admin/vendor/owl-carousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../admin/vendor/owl-carousel/css/owl.theme.default.min.css">
-    <link href="../../admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
-    <link href="../../admin/vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
-    <link href="../../admin/vendor/chartist/css/chartist.min.css" rel="stylesheet">
-    <link href="../../admin/css/style.css" rel="stylesheet">
-    <link href="../../admin/css/perfect-scrollbar.css" rel="stylesheet">
-    <link href="../../admin/css/style.css.map" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../admin/images/favicon.png" />
+    <link rel="stylesheet" href="../../admin/vendor/owl-carousel/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../../admin/vendor/owl-carousel/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="../../admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet" />
+    <link href="../../admin/vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet" />
+    <link href="../../admin/vendor/chartist/css/chartist.min.css" rel="stylesheet" />
+
+    <!-- Datatable -->
+    <link href="../../admin/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
     
+    <link href="../../admin/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="../../admin/css/style.css.map" rel="stylesheet" />
+    <link href="../../admin/css/style.css" rel="stylesheet" />
+
+
+
+    <style>
+        .file-upload-form {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.file-upload-label input {
+  display: none;
+}
+.file-upload-label svg {
+  height: 50px;
+  fill: rgb(82, 82, 82);
+  margin-bottom: 20px;
+}
+.file-upload-label {
+  cursor: pointer;
+  background-color: #ddd;
+  padding: 30px 70px;
+  border-radius: 40px;
+  border: 2px dashed rgb(82, 82, 82);
+  box-shadow: 0px 0px 200px -50px rgba(0, 0, 0, 0.719);
+}
+.file-upload-design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.browse-button {
+  background-color: rgb(82, 82, 82);
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: white;
+  transition: all 0.3s;
+}
+.browse-button:hover {
+  background-color: rgb(14, 14, 14);
+}
+    </style>
+
 </head>
+
 <body>
-   
     <!--*******************
         Preloader start
     ********************-->
@@ -34,20 +88,18 @@
         Preloader end
     ********************-->
 
-
     <!--**********************************
         Main wrapper start
     ***********************************-->
     <div id="main-wrapper">
-
         <!--**********************************
             Nav header start
         ***********************************-->
         <div class="nav-header">
             <a th:href="@{/admin/index}" class="brand-logo">
-                <img class="logo-abbr" src="../../admin/images/logo.png" alt="">
-                <img class="logo-compact" src="../../admin/images/logo-text.png" alt="">
-                <img class="brand-title" src="../../admin/images/logo-text.png" alt="">
+                <img class="logo-abbr" src="../../admin/images/logo.png" alt="" />
+                <img class="logo-compact" src="../../admin/images/logo-text.png" alt="" />
+                <img class="brand-title" src="../../admin/images/logo-text.png" alt="" />
             </a>
 
             <div class="nav-control">
@@ -74,7 +126,8 @@
                                 </span>
                                 <div class="dropdown-menu p-0 m-0">
                                     <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                        <input class="form-control" type="search" placeholder="Search"
+                                            aria-label="Search" />
                                     </form>
                                 </div>
                             </div>
@@ -146,15 +199,15 @@
                                     <i class="mdi mdi-account"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="./app-profile.html" class="dropdown-item">
+                                    <a href="../../app-profile.html" class="dropdown-item">
                                         <i class="icon-user"></i>
                                         <span class="ml-2">Profile </span>
                                     </a>
-                                    <a href="./email-inbox.html" class="dropdown-item">
+                                    <a href="../../email-inbox.html" class="dropdown-item">
                                         <i class="icon-envelope-open"></i>
                                         <span class="ml-2">Inbox </span>
                                     </a>
-                                    <a href="./page-login.html" class="dropdown-item">
+                                    <a th:href="@{/admin/login}" class="dropdown-item">
                                         <i class="icon-key"></i>
                                         <span class="ml-2">Logout </span>
                                     </a>
@@ -175,120 +228,42 @@
         <div class="quixnav">
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Main Menu</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-single-04"></i><span class="nav-text">KHÁCH HÀNG</span></a>
+                    <li class="nav-label first">SẢN PHẨM</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa-solid fa-store"></i>
+                            <span class="nav-text">QUẢN LÝ SẢN PHẨM</span></a>
                         <ul aria-expanded="false">
-                            <li><a th:href="@{/admin/index}">Dashboard 1</a></li>
-                            <li><a th:href="@{/admin/categories}">Dashboard 2</a></li>
+                            <li><a th:href="@{/admin/product}">SẢN PHẨM</a></li>
+                            <li><a th:href="@{/admin/categories}">LOẠI SẢN PHẢM CHI TIẾT</a></li>
+                            <li><a th:href="@{/admin/bard}">THƯƠNG HIỆU</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Apps</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./app-profile.html">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="./email-compose.html">Compose</a></li>
-                                    <li><a href="./email-inbox.html">Inbox</a></li>
-                                    <li><a href="./email-read.html">Read</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./app-calender.html">Calendar</a></li>
-                        </ul>
+                    <li>
+                        <a th:href="@{/admin/flashsale}" aria-expanded="false"><i class="fa-solid fa-percent"></i><span class="nav-text">QUẢN LÝ MÃ GIẢM
+                                GIÁ</span></a>
                     </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-chart-bar-33"></i><span class="nav-text">Charts</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./chart-flot.html">Flot</a></li>
-                            <li><a href="./chart-morris.html">Morris</a></li>
-                            <li><a href="./chart-chartjs.html">Chartjs</a></li>
-                            <li><a href="./chart-chartist.html">Chartist</a></li>
-                            <li><a href="./chart-sparkline.html">Sparkline</a></li>
-                            <li><a href="./chart-peity.html">Peity</a></li>
-                        </ul>
+                    <li>
+                        <a th:href="@{#3}" aria-expanded="false"><i class="fa-solid fa-tag"></i><span class="nav-text">SẢN PHẨM GIẢM GIÁ
+                                </span></a>
                     </li>
-                    <li class="nav-label">Components</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./ui-accordion.html">Accordion</a></li>
-                            <li><a href="./ui-alert.html">Alert</a></li>
-                            <li><a href="./ui-badge.html">Badge</a></li>
-                            <li><a href="./ui-button.html">Button</a></li>
-                            <li><a href="./ui-modal.html">Modal</a></li>
-                            <li><a href="./ui-button-group.html">Button Group</a></li>
-                            <li><a href="./ui-list-group.html">List Group</a></li>
-                            <li><a href="./ui-media-object.html">Media Object</a></li>
-                            <li><a href="./ui-card.html">Cards</a></li>
-                            <li><a href="./ui-carousel.html">Carousel</a></li>
-                            <li><a href="./ui-dropdown.html">Dropdown</a></li>
-                            <li><a href="./ui-popover.html">Popover</a></li>
-                            <li><a href="./ui-progressbar.html">Progressbar</a></li>
-                            <li><a href="./ui-tab.html">Tab</a></li>
-                            <li><a href="./ui-typography.html">Typography</a></li>
-                            <li><a href="./ui-pagination.html">Pagination</a></li>
-                            <li><a href="./ui-grid.html">Grid</a></li>
-
-                        </ul>
+                    <li>
+                        <a th:href="@{/admin/order}" aria-expanded="false"><i
+                                class="fa-solid fa-cart-shopping"></i><span class="nav-text">QUẢN LÝ ĐƠN HÀNG</span></a>
                     </li>
-
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-plug"></i><span class="nav-text">Plugins</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./uc-select2.html">Select 2</a></li>
-                            <li><a href="./uc-nestable.html">Nestedable</a></li>
-                            <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
-                            <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="./uc-toastr.html">Toastr</a></li>
-                            <li><a href="./map-jqvmap.html">Jqv Map</a></li>
-                        </ul>
+                    
+                    <li class="nav-label">TÀI KHOẢN & KHÁCH HÀNG</li>
+                    <li>
+                        <a th:href="@{/admin/custumer}" aria-expanded="false"><i 
+                            class="fa-solid fa-address-book"></i><span class="nav-text">THÔNG TIN KHÁCH HÀNG</span></a>
                     </li>
-                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                                class="nav-text">Widget</span></a></li>
-                    <li class="nav-label">Forms</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-form"></i><span class="nav-text">Forms</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./form-element.html">Form Elements</a></li>
-                            <li><a href="./form-wizard.html">Wizard</a></li>
-                            <li><a href="./form-editor-summernote.html">Summernote</a></li>
-                            <li><a href="form-pickers.html">Pickers</a></li>
-                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Table</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                            <li><a href="table-datatable-basic.html">Datatable</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-label">Extra</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-single-copy-06"></i><span class="nav-text">Pages</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./page-register.html">Register</a></li>
-                            <li><a href="./page-login.html">Login</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="./page-error-400.html">Error 400</a></li>
-                                    <li><a href="./page-error-403.html">Error 403</a></li>
-                                    <li><a href="./page-error-404.html">Error 404</a></li>
-                                    <li><a href="./page-error-500.html">Error 500</a></li>
-                                    <li><a href="./page-error-503.html">Error 503</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./page-lock-screen.html">Lock Screen</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-label">THỐNG KÊ</li>
+                    <li>
+                        <a  th:href="@{/admin/statistics}" aria-expanded="false"><i class="fa-solid fa-chart-pie"></i><span class="nav-text">THỐNG KÊ DOANH THU</span></a>
+                        
+                    </li>           
                 </ul>
             </div>
-
-
         </div>
         <!--**********************************
             Sidebar end
@@ -298,20 +273,25 @@
             Content body start
         ***********************************-->
         <div th:insert="${content}" class="content-body">
-            
+
         </div>
         <!--**********************************
             Content body end
         ***********************************-->
-
 
         <!--**********************************
             Footer start
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-                <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p> 
+                <p>
+                    Copyright © Designed &amp; Developed by
+                    <a href="#" target="_blank">Quixkit</a> 2019
+                </p>
+                <p>
+                    Distributed by
+                    <a href="https://themewagon.com/" target="_blank">Themewagon</a>
+                </p>
             </div>
         </div>
         <!--**********************************
@@ -325,8 +305,6 @@
         <!--**********************************
            Support ticket button end
         ***********************************-->
-
-
     </div>
     <!--**********************************
         Main wrapper end
@@ -335,15 +313,21 @@
     <!--**********************************
         Scripts
     ***********************************-->
+    
+
+     <!-- bootstrap -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+     -->
     <!-- Required vendors -->
     <script src="../../admin/vendor/global/global.min.js"></script>
     <script src="../../admin/js/quixnav-init.js"></script>
     <script src="../../admin/js/custom.min.js"></script>
 
+    
     <!-- Vectormap -->
     <script src="../../admin/vendor/raphael/raphael.min.js"></script>
     <script src="../../admin/vendor/morris/morris.min.js"></script>
-
 
     <script src="../../admin/vendor/circle-progress/circle-progress.min.js"></script>
     <script src="../../admin/vendor/chart.js/Chart.bundle.min.js"></script>
@@ -354,18 +338,28 @@
     <script src="../../admin/vendor/flot/jquery.flot.js"></script>
     <script src="../../admin/vendor/flot/jquery.flot.resize.js"></script>
 
+    <script src="../../admin/vendor/global/global.min.js"></script>
+    <script src="../../admin/js/quixnav-init.js"></script>
+    <script src="../../admin/js/custom.min.js"></script>
+    
+
+   
+
+    
+    
+    <!-- Datatable -->
+    <script src="../../admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../../admin/js/plugins-init/datatables.init.js"></script>
+
     <!-- Owl Carousel -->
     <script src="../../admin/vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
+   
     <!-- Counter Up -->
     <script src="../../admin/vendor/jqvmap/js/jquery.vmap.min.js"></script>
     <script src="../../admin/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
     <script src="../../admin/vendor/jquery.counterup/jquery.counterup.min.js"></script>
 
-
     <script src="../../admin/js/dashboard/dashboard-1.js"></script>
-    
-
 
     <script src="../../admin/vendor/global/global.min.js"></script>
     <script src="../../admin/js/quixnav-init.js"></script>
@@ -375,8 +369,11 @@
 
     <script src="../../admin/vendor/moment/moment.min.js"></script>
     <script src="../../admin/vendor/pg-calendar/js/pignose.calendar.min.js"></script>
-
-
+    
     <script src="../../admin/js/dashboard/dashboard-2.js"></script>
+
+    <!-- Chart Morris plugin files -->
+    <script src="../../admin/js/plugins-init/morris-init.js"></script>
 </body>
+
 </html>
